@@ -1,0 +1,31 @@
+<h2>Job Management</h2>
+
+<form (ngSubmit)="addJob()">
+  <input type="text" [(ngModel)]="newJob.title" name="title" placeholder="Job Title" required>
+  <input type="text" [(ngModel)]="newJob.description" name="description" placeholder="Description" required>
+  <input type="number" [(ngModel)]="newJob.maxHires" name="maxHires" min="1" required>
+  <button type="submit">Add Job</button>
+</form>
+
+<div *ngFor="let job of jobs">
+  <h3>{{ job.title }}</h3>
+  <p>{{ job.description }}</p>
+  <p>Max Hires: {{ job.maxHires }}</p>
+
+  <h4>Waiting List</h4>
+  <ul>
+    <li *ngFor="let applicant of job.waitingList">
+      {{ applicant.name }} ({{ applicant.email }})
+      <button (click)="hireApplicant(job._id, applicant)">Hire</button>
+    </li>
+  </ul>
+
+  <h4>Hired Applicants</h4>
+  <ul>
+    <li *ngFor="let applicant of job.hiredList">
+      {{ applicant.name }} ({{ applicant.email }})
+    </li>
+  </ul>
+
+  <button (click)="deleteJob(job._id)">Delete Job</button>
+</div>
