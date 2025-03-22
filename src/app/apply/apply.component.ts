@@ -26,8 +26,8 @@ export class ApplyComponent implements OnInit {
   loadJob(): void {
     this.jobService.getJobById(this.jobId).subscribe(
       (data) => {
-        console.log('Fetched job:', data);  // Log job to check the lists
-        this.job = data;  // Update the job object
+        console.log('Fetched job:', data); 
+        this.job = data;  
       },
       (error) => console.error('Error fetching job:', error)
     );
@@ -38,8 +38,8 @@ export class ApplyComponent implements OnInit {
     
     this.jobService.applyForJob(this.jobId, this.applicant).subscribe(
       (data) => {
-        console.log('Application result:', data); // Log the response to check the updated job
-        this.job = data.job; // Update job with the new waiting list and hired list
+        console.log('Application result:', data); 
+        this.job = data.job; 
         this.applicant = { name: '', email: '' };
       },
       (error) => console.error('Error applying:', error)

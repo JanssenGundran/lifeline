@@ -6,13 +6,13 @@ require('dotenv').config();
 const app = express();
 connectDB();
 
+app.use(express.json());
+
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: 'http://localhost:4200', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-app.use(express.json());
 
 app.use('/api/jobs', require('./routes/jobRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
