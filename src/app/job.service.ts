@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class JobService {
-  private apiUrl = 'http://localhost:5000/api/jobs';
+  private apiUrl = 'https://lifelinebackend-czjt.onrender.com';
 
   constructor(private http: HttpClient) {}
 
