@@ -1,76 +1,138 @@
+/* Page Title */
 h2 {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    background: #007bff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 20px auto;
-  }
-  
-  li {
-    background: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  li input {
-    width: 100%;
-  }
-  
-  li button {
-    margin-top: 5px;
-    background: #28a745;
-  }
-  
-  li button:nth-child(2) {
-    background: #dc3545;
-  }
-  
-  li button:nth-child(2):hover {
-    background: #b02a37;
-  }
-  
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items */
+}
+
+/* Input Fields */
+form input {
+  width: 90%; /* Adjusts width to fit inside */
+  max-width: 350px; /* Ensures it doesn't get too large */
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Prevents overflow */
+}
+
+/* Submit Button */
+form button {
+  width: 20%; /* Matches input width */
+  max-width: 350px;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background: #000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #444;
+}
+/* Job Listing Container */
+.job-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000;
+}
+
+/* Job Title */
+.job-container h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Job Description */
+.job-container p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Section Headers */
+.job-container h4 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+  background: #dedddd;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Lists */
+.job-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.job-container ul li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Alternate Row Colors */
+.job-container ul li:nth-child(even) {
+  background: #eaeaea;
+}
+
+/* Buttons inside lists */
+.job-container button {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.job-container button:hover {
+  background: #039c2f;
+}
+
+/* Delete Button */
+.job-container .delete-job {
+  width: 15%;
+  background: red;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.job-container .delete-job:hover {
+  background: darkred;
+}
+

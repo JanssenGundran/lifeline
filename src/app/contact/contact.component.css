@@ -1,0 +1,101 @@
+/* Centering the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fdf6f5;
+  }
+  
+  /* Form Container */
+  .form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 550px;
+    border: 2px solid black;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+  }
+  
+  textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  /* Submit Button */
+  button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Contact Info Section */
+  .contact-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .contact-info hr {
+    width: 60px;
+    border: 1px solid black;
+    margin: 5px auto;
+  }
+  
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+}
+
+  

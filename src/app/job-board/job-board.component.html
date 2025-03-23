@@ -1,17 +1,23 @@
 <div class="job-board">
-    
-    <h1>LIFELINE PAMPANGA</h1>
-    <div *ngFor="let job of jobs" class="job-listing">
-      <h2>{{ job.title }}</h2>
-      <p>{{ job.description }}</p>
-      <button class="apply-btn" (click)="navigateToApply(job._id)">APPLY NOW</button>
-    </div> 
-    <footer class="footer">
-      <p>Follow us:</p>
-      <div class="social-icons">
-        <img src="assets/facebook-icon.png" alt="Facebook" />
-        <img src="assets/twitter-icon.png" alt="Twitter" />
-        <img src="assets/instagram-icon.png" alt="Instagram" />
+  <h2>LIFELINE PAMPANGA</h2>
+
+  <div *ngFor="let job of jobs" class="job-listing">
+      <div class="job-info">
+          <h2>{{ job.title }}</h2>
+          <p>Additional Details</p>
+          <span class="underline"></span>
+          <span class="underline"></span>
+          <p>{{ job.description }}</p>
       </div>
-    </footer>
+      <button class="apply-btn" (click)="navigateToApply(job._id)">APPLY NOW</button>
   </div>
+
+  <footer class="footer">
+      <p>Soc Med Icons</p>
+      <div class="social-icons">
+          <img src="assets/facebook.png" alt="Facebook" />
+          <img src="assets/twitter.png" alt="Twitter" />
+          <img src="assets/instagram.png" alt="Instagram" />
+      </div>
+  </footer>
+</div>

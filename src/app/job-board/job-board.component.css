@@ -1,81 +1,90 @@
-/* job-board.component.css */
+/* Center the job board */
 .job-board {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 40px auto;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-.header {
-    background: #2E8B57; 
-    padding: 15px;
-    color: white;
+/* Title Styling */
+.job-board h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.left-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.logo {
-    width: 50px;
-    height: auto;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-buttons button {
-    padding: 8px 12px;
-    background: white;
-    border: none;
-    cursor: pointer;
-}
-
-.nav-buttons button:hover {
-    background: #ddd;
-}
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
+/* Job Listing Container */
 .job-listing {
-    border: 1px solid #ddd;
-    padding: 15px;
+    border: 2px solid #000; /* Black border */
+    padding: 20px;
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Job Title and Details */
+.job-info {
+    text-align: left;
+}
+
+.job-info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.job-info p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+/* Simulating Underlined Details */
+.underline {
+    display: block;
+    width: 110px;
+    height: 2px;
+    background: black;
+    margin: 3px 0;
+}
+
+/* Apply Now Button */
 .apply-btn {
     background: #ddd;
     border: none;
-    padding: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .apply-btn:hover {
     background: #bbb;
 }
 
+/* Footer */
 .footer {
     text-align: center;
+    margin-top: 30px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
-.footer .social-icons {
-    justify-content: center;
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+.social-icons img:hover {
+    opacity: 1;
 }

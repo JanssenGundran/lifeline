@@ -1,27 +1,33 @@
-<h2>Apply for {{ job.title }}</h2>
-
-<form (ngSubmit)="apply()">
-  <label>Name:</label>
-  <input type="text" [(ngModel)]="applicant.name" name="name" required>
+<div class="apply-container">
+  <h2>LIFELINE PAMPANGA</h2>
   
-  <label>Email:</label>
-  <input type="email" [(ngModel)]="applicant.email" name="email" required>
-  
-  <button type="submit" [disabled]="job.hiredList.length >= job.maxHires">
-    Apply Now
-  </button>
-</form>
-
-<h3>Waiting List</h3>
-<ul>
-  <li *ngFor="let applicant of job.waitingList">
-    {{ applicant.name }} ({{ applicant.email }})
-  </li>
-</ul>
-
-<h3>Hired Applicants</h3>
-<ul>
-  <li *ngFor="let applicant of job.hiredList">
-    {{ applicant.name }} ({{ applicant.email }})
-  </li>
-</ul>
+  <form (ngSubmit)="apply()">
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="applicant.name" name="name" required>
+      
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="applicant.email" name="email" required>
+      
+      <button type="submit" [disabled]="job.hiredList.length >= job.maxHires">SUBMIT</button>
+  </form>
+</div>
+<hr>
+<!-- Pending & Approved Section -->
+<div class="status-container">
+  <div class="status-row">
+      <div class="status-column">PENDING</div>
+      <div class="status-column">APPROVED</div>
+  </div>
+  <div class="status-list">
+      <div class="status-item">
+          <div *ngFor="let applicant of job.waitingList">
+              {{ applicant.name }}
+          </div>
+      </div>
+      <div class="status-item">
+          <div *ngFor="let applicant of job.hiredList">
+              {{ applicant.name }}
+          </div>
+      </div>
+  </div>
+</div>
