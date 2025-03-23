@@ -1,0 +1,113 @@
+/* Centering the entire form container */
+.apply-container {
+    max-width: 380px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid black;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Headings */
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Submit Button */
+button {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: lightgray;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: gray;
+    color: white;
+}
+
+/* Status Container */
+.status-container {
+    width: 90%;
+    max-width: 380px;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Table Headers */
+.status-row {
+    display: flex;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+}
+
+/* Status Columns */
+.status-column {
+    flex: 1;
+    padding: 8px;
+    border-right: 2px solid black;
+}
+
+.status-column:last-child {
+    border-right: none;
+}
+
+/* Name List (Without Bullet Points) */
+.status-list {
+    display: flex;
+    text-align: center;
+}
+
+.status-item {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Alternate Row Colors */
+.status-item div:nth-child(odd) {
+    background-color: #c4c4c4;
+}
+
+.status-item div:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Maintain padding for readability */
+.status-item div {
+    padding: 8px;
+    border-radius: 5px;
+}
