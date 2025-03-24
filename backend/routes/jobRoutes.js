@@ -44,32 +44,28 @@ router.post('/:id/apply', async (req, res) => {
             return res.status(400).json({ message: 'Job already filled' });
         }
 
-        // Add applicant to waiting list
+
         job.waitingList.push({ name, email });
         await job.save();
 
-        // Return updated job information
         res.json({ message: 'Application received!', job });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-// Hire an applicant
 router.post('/:id/hire', async (req, res) => {
     try {
         const { name, email } = req.body;
         const job = await Job.findById(req.params.id);
         if (!job) return res.status(404).json({ message: 'Job not found' });
 
-        // Find applicant in the waiting list by name and email
         const applicantIndex = job.waitingList.findIndex(app => app.name === name && app.email === email);
         if (applicantIndex === -1) {
             console.log(`Applicant ${name} (${email}) not found in the waiting list`);
             return res.status(400).json({ message: 'Applicant not found in waiting list' });
         }
 
-        // Hire the applicant: Ensure the hiredApplicant has `name` and `email`
         const hiredApplicant = {
             name: job.waitingList[applicantIndex].name, 
             email: job.waitingList[applicantIndex].email,
@@ -78,19 +74,15 @@ router.post('/:id/hire', async (req, res) => {
 
         job.hiredList.push(hiredApplicant);
 
-        // Remove the applicant from the waiting list
         job.waitingList.splice(applicantIndex, 1);
 
-        // Save the updated job data
         await job.save();
 
-        // Check if we have filled the job (i.e., hired enough applicants)
         if (job.hiredList.length >= job.maxHires) {
             await Job.findByIdAndDelete(req.params.id);
             return res.json({ message: 'Job filled and deleted', job });
         }
 
-        // Return updated job information after hiring
         res.json({ message: 'Applicant hired!', job });
     } catch (error) {
         console.error('Error hiring applicant:', error);
