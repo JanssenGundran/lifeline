@@ -5,10 +5,12 @@ import { AppComponent } from './app/app.component';
 import { JobBoardComponent } from './app/job-board/job-board.component';
 import { ApplyComponent } from './app/apply/apply.component';
 import { JobManagementComponent } from './app/job-management/job-management.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './app/admin-login/admin-login.component';
 
 const routes: Routes = [
+  { path: 'login', component: AdminLoginComponent }, 
   { path: 'jobs', component: JobBoardComponent },
   { path: 'apply/:id', component: ApplyComponent },
   { path: 'manage-jobs', component: JobManagementComponent }
@@ -17,6 +19,7 @@ const routes: Routes = [
 bootstrapApplication(AppComponent, {  
   providers: [
     provideRouter(routes),
-    importProvidersFrom(HttpClientModule, FormsModule)
+    importProvidersFrom(HttpClientModule, FormsModule),
+    provideHttpClient()
   ],
-});
+}); 

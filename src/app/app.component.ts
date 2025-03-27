@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { JobBoardComponent } from './job-board/job-board.component';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';  
+import { RouterModule } from '@angular/router';  
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule],
+  standalone: true,  
+  imports: [CommonModule, RouterModule], 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'lifeline';
+  isAdmin = false;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.getLoginStatus().subscribe((status) => {
+      this.isAdmin = status;
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }
