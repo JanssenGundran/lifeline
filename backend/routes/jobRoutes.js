@@ -45,45 +45,28 @@ router.post('/:id/apply', async (req, res) => {
             return res.status(400).json({ message: 'Job already filled' });
         }
 
-        
+        // Add applicant to waiting list
         job.waitingList.push({ name, email });
         await job.save();
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> 02e1b30 (Updated files)
         res.json({ message: 'Application received!', job });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-<<<<<<< HEAD
-// Hire
-router.post('/:id/hire', async (req, res) => {
-=======
 // Hire an applicant (ADMIN ONLY)
 router.post('/:id/hire', authMiddleware, async (req, res) => {
->>>>>>> 02e1b30 (Updated files)
     try {
         const { name, email } = req.body;
         const job = await Job.findById(req.params.id);
         if (!job) return res.status(404).json({ message: 'Job not found' });
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> 02e1b30 (Updated files)
         const applicantIndex = job.waitingList.findIndex(app => app.name === name && app.email === email);
         if (applicantIndex === -1) {
             return res.status(400).json({ message: 'Applicant not found in waiting list' });
         }
 
-<<<<<<< HEAD
-       
-=======
->>>>>>> 02e1b30 (Updated files)
         const hiredApplicant = {
             name: job.waitingList[applicantIndex].name,
             email: job.waitingList[applicantIndex].email,
@@ -91,30 +74,15 @@ router.post('/:id/hire', authMiddleware, async (req, res) => {
         };
 
         job.hiredList.push(hiredApplicant);
-<<<<<<< HEAD
-
-       
-        job.waitingList.splice(applicantIndex, 1);
-
-        
-        await job.save();
-
-       
-=======
         job.waitingList.splice(applicantIndex, 1);
         await job.save();
 
         // Delete the job if hiring is complete
->>>>>>> 02e1b30 (Updated files)
         if (job.hiredList.length >= job.maxHires) {
             await Job.findByIdAndDelete(req.params.id);
             return res.json({ message: 'Job filled and deleted', job });
         }
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 02e1b30 (Updated files)
         res.json({ message: 'Applicant hired!', job });
     } catch (error) {
         res.status(500).json({ message: error.message });
