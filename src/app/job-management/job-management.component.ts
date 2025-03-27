@@ -14,6 +14,7 @@ export class JobManagementComponent implements OnInit {
   jobs: any[] = [];
   newJob = { title: '', description: '', maxHires: 1 };
   editingJob: any = null;
+  applicant = { name: '', email: '' }; 
 
   constructor(private jobService: JobService) {}
 
@@ -26,9 +27,11 @@ export class JobManagementComponent implements OnInit {
   }
 
   addJob(): void {
+    if (!this.newJob.title || !this.newJob.description) return; // Basic validation
+
     this.jobService.addJob(this.newJob).subscribe(() => {
       this.fetchJobs();
-      this.newJob = { title: '', description: '', maxHires: 1 };
+      this.newJob = { title: '', description: '', maxHires: 1 }; // Reset after adding
     });
   }
 
@@ -41,7 +44,7 @@ export class JobManagementComponent implements OnInit {
 
     this.jobService.updateJob(this.editingJob._id, this.editingJob).subscribe(() => {
       this.fetchJobs();
-      this.editingJob = null;
+      this.editingJob = null; // Reset editing mode
     });
   }
 
@@ -54,11 +57,16 @@ export class JobManagementComponent implements OnInit {
   }
 
   hireApplicant(jobId: string, applicant: any): void {
+    if (!applicant.name || !applicant.email) {
+      alert('Please fill out applicant information');
+      return;
+    }
+  
     this.jobService.hireApplicant(jobId, applicant).subscribe(
-      () => this.fetchJobs(), 
-      (error) => console.error('Error hiring:', error)
+      () => {
+        this.fetchJobs(); // Refresh the job list
+      },
+      (error) => console.error('Error hiring applicant:', error)
     );
   }
-  
-  
-}
+}  

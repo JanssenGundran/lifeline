@@ -16,10 +16,12 @@
   <ul>
     <li *ngFor="let applicant of job.waitingList">
       {{ applicant.name }} ({{ applicant.email }})
+      
       <button (click)="hireApplicant(job._id, applicant)">Hire</button>
     </li>
   </ul>
 
+ 
   <h4>Hired Applicants</h4>
   <ul>
     <li *ngFor="let applicant of job.hiredList">
