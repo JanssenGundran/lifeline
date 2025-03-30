@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.scss'],
+  styleUrls: ['./admin-login.component.css'],
   imports: [RouterModule, CommonModule, FormsModule]
 })
 export class AdminLoginComponent {

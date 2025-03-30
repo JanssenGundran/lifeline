@@ -23,13 +23,16 @@
 }
 
 .logo {
-    width: 50px;
+    width: 80px;
     height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .nav-buttons {
     display: flex;
-    gap: 10px;
+    gap: 35px;
+    padding-left: 30px;
 }
 
 .nav-buttons button {
@@ -37,6 +40,7 @@
     background: white;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .nav-buttons button:hover {
@@ -78,3 +82,22 @@
 .footer .social-icons {
     justify-content: center;
 }
+
+.social-icons {
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }

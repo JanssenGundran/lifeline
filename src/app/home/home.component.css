@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+.header {
+    background: #4CAF50;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.nav-buttons a:hover {
+    text-decoration: underline;
+}
+.social-icons img {
+    width: 30px;
+    margin: 0 5px;
+}
+.main-content {
+    text-align: center;
+    padding: 50px;
+}
+.hero {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(20, 19, 19, 0.479);
+    max-width: 700px;
+    margin: auto;
+}
+.hero-logo {
+    width: 250px;
+    border-radius: 50px;
+}
+.buttons {
+    margin-top: 20px;
+}
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+.btn-secondary {
+    background: #4CAF50;
+    color: white;
+}
+.btn-primary:hover {
+    background: #bbb;
+}
+.btn-secondary:hover {
+    background: #bbb;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}

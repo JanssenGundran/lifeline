@@ -6,8 +6,8 @@
   <input type="number" [(ngModel)]="newJob.maxHires" name="maxHires" min="1" required>
   <button type="submit">Add Job</button>
 </form>
-
-<div *ngFor="let job of jobs">
+<hr>
+<div class="job-container" *ngFor="let job of jobs">
   <h3>{{ job.title }}</h3>
   <p>{{ job.description }}</p>
   <p>Max Hires: {{ job.maxHires }}</p>
@@ -16,12 +16,10 @@
   <ul>
     <li *ngFor="let applicant of job.waitingList">
       {{ applicant.name }} ({{ applicant.email }})
-      
       <button (click)="hireApplicant(job._id, applicant)">Hire</button>
     </li>
   </ul>
 
- 
   <h4>Hired Applicants</h4>
   <ul>
     <li *ngFor="let applicant of job.hiredList">
@@ -29,5 +27,5 @@
     </li>
   </ul>
 
-  <button (click)="deleteJob(job._id)">Delete Job</button>
+  <button class="delete-job" (click)="deleteJob(job._id)">Delete Job</button>
 </div>

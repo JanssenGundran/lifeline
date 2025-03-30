@@ -8,8 +8,14 @@ import { JobManagementComponent } from './app/job-management/job-management.comp
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './app/admin-login/admin-login.component';
+import { HomeComponent } from './app/home/home.component';
+import { AboutComponent } from './app/about/about.component';
+import { ContactComponent } from './app/contact/contact.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'login', component: AdminLoginComponent }, 
   { path: 'jobs', component: JobBoardComponent },
   { path: 'apply/:id', component: ApplyComponent },

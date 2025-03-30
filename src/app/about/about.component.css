@@ -1,0 +1,121 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Header with Background Image */
+header {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://source.unsplash.com/1600x600/?community,help');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: rgb(173, 170, 170);
+}
+
+header .overlay {
+    max-width: 800px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+/* Card Style */
+.card {
+    text-align: center; /* Centers text inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column; /* Ensures steps are stacked */
+    align-items: center; /* Centers steps horizontally */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #05af3d;
+    text-align: center;
+}
+
+/* Steps Section */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.step {
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.step:hover {
+    background: #0056b3;
+}
+
+.step span {
+    background: white;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+.title {
+    color: #05af3d;
+}

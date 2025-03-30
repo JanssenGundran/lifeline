@@ -1,22 +1,22 @@
 <header class="header">
   <div class="header-content">
     <div class="left-header">
-      <img src="assets/logo.png" alt="Lifeline Pampanga Logo" class="logo" />
+      <img src="assets/L.png" alt="Lifeline Pampanga Logo" class="logo" />
       <nav class="nav-buttons">
-        <button>Home</button>
-        <button><a routerLink="/jobs">Jobs</a></button>
-        <button *ngIf="isAdmin"><a routerLink="/manage-jobs">Manage Jobs</a></button> 
-        <button>About</button>
-        <button>Contact</button>
-        <button *ngIf="!isAdmin"><a routerLink="/login">Admin Login</a></button>
+        <button routerLink="/">HOME</button>
+        <button routerLink="/about">About</button>
+        <button routerLink="/jobs">JOBS</button>
+        <button *ngIf="isAdmin" routerLink="/manage-jobs">MANAGE JOBS</button>
+        <button routerLink="/contact">Contact</button>
+        <button *ngIf="!isAdmin" routerLink="/login">Admin Login</button>
         <button *ngIf="isAdmin" (click)="logout()">Logout</button>
 
       </nav>
     </div>
     <div class="social-icons">
-      <img src="assets/facebook-icon.png" alt="Facebook" />
-      <img src="assets/twitter-icon.png" alt="Twitter" />
-      <img src="assets/instagram-icon.png" alt="Instagram" />
+      <img src="assets/facebook.png" alt="Facebook" />
+      <img src="assets/twitter.png" alt="Twitter" />
+      <img src="assets/instagram.png" alt="Instagram" />
     </div>
   </div>
 </header>

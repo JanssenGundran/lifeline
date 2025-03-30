@@ -4,6 +4,7 @@ import { JobBoardComponent } from './job-board/job-board.component';
 import { JobManagementComponent } from './job-management/job-management.component';
 import { ApplyComponent } from './apply/apply.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   { path: 'login', component: AdminLoginComponent }, 

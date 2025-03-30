@@ -1,41 +1,64 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Container Styling */
 .login-container {
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
-    h2 {
-      margin-bottom: 15px;
-    }
-  
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-  
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      cursor: pointer;
-      border-radius: 5px;
-  
-      &:hover {
-        background: #0056b3;
-      }
-    }
-  
-    .error {
-      color: red;
-      margin-top: 10px;
-    }
-  }
-  
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background: white; /* White background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555); /* Shadow effect */
+  margin-top: 150px;
+}
+
+/* Heading Styling */
+.login-container h2 {
+  color: #2d6a4f; /* Green color */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Input Field Styling */
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Button Styling */
+.login-container button {
+  background: #2d6a4f; /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-container button:hover {
+  background: #1b5e3b; /* Darker green on hover */
+}
+
+/* Error Message Styling */
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
